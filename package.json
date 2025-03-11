@@ -1,11 +1,11 @@
 {
-  "dependencies": {
-    "bootstrap": "^5.3.3"
-  },
   "scripts": {
-  "build": "npm run compile-scss && npm run copy-assets",
-  "compile-scss": "sass src/scss/main.scss dist/css/main.css",
-  "copy-assets": "cp src/assets/* dist/assets/"
-}
-
+    "build": "npm run compile-scss && npm run copy-assets",
+    "compile-scss": "sass src/scss/main.scss dist/css/main.css",
+    "copy-assets": "cp src/assets/* dist/assets/"
+  },
+  "devDependencies": {
+    "bootstrap": "^5.3.3",
+    "sass": "^1.85.1"
+  }
 }
