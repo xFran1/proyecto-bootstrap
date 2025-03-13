@@ -31,40 +31,32 @@
                   <div class=" logo">InciTracker</div>
                   <div class="formulario-registro">
 
-                  <form action="#" class="needs-validation mt-3" >
-
-                    <div class="mt-3 form-floating position-relative">
-                      <input type="text" name="name" id="input-name" class="form-control" required placeholder="Correo electrónico"/>
-                      <label for="input-email" class="form-label formulario-letra">Nombre y apellidos</label>
-                     
-          
-                      <div class="valid-feedback">Campo valido</div>
-                      <div class="invalid-feedback">Debes completar el correo electrónico</div>
-                    </div>
-
-                  <div class="mt-3 form-floating position-relative">
-                    <input type="email" name="email" id="input-email" class="form-control" required placeholder="Correo electrónico"/>
-                    <label for="input-email" class="form-label formulario-letra">E-mail</label>
-                   
-        
-                    <div class="valid-feedback">Campo valido</div>
-                    <div class="invalid-feedback">Debes completar el correo electrónico</div>
-                  </div>
-
-
-                  <div class="mt-3 form-floating position-relative">
-                    <input type="password" name="password" id="input-password" class="form-control" required placeholder="Correo electrónico"/>
-                    <label for="input-password" class="form-label formulario-letra">Contraseña</label>
-                  
-        
-                    <div class="valid-feedback">Campo valido</div>
-                    <div class="invalid-feedback">Debes completar el correo electrónico</div>
-                  </div>
-              
-                   
+                    <form action="#" class="needs-validation mt-3" novalidate>
+  
+                      <div class="mt-3 form-floating position-relative">
+                        <input type="text" name="name" id="input-name" class="form-control" placeholder="Nombre y apellidos" required>
+                        <label for="input-name" class="form-label formulario-letra">Nombre y apellidos</label>
+                        <div class="valid-feedback">¡Se ve bien!</div>
+                        <div class="invalid-feedback">Debes completar el nombre y apellidos</div>
+                      </div>
                     
-                    <button type="submit" class="btn btn-primary w-100 mt-3">Registrarse</button>
-                </form>
+                      <div class="mt-3 form-floating position-relative">
+                        <input type="email" name="email" id="input-email" class="form-control" placeholder="Correo electrónico" required>
+                        <label for="input-email" class="form-label formulario-letra">E-mail</label>
+                        <div class="valid-feedback">¡Correo válido!</div>
+                        <div class="invalid-feedback">Introduce un correo electrónico válido</div>
+                      </div>
+                    
+                      <div class="mt-3 form-floating position-relative">
+                        <input type="password" name="password" id="input-password" class="form-control" placeholder="Contraseña" required minlength="6">
+                        <label for="input-password" class="form-label formulario-letra">Contraseña</label>
+                        <div class="valid-feedback">¡Contraseña válida!</div>
+                        <div class="invalid-feedback">La contraseña debe tener al menos 6 caracteres</div>
+                      </div>
+                    
+                      <button type="submit" class="btn btn-primary w-100 mt-3">Registrarse</button>
+                    
+                    </form>
 
                 <div class="text-center mt-2 formulario-subtitle mt-3">Ya tiene cuenta? <a href="inicio.html" class="text-primary">Inicie sesión</a></div>
                 <div class="google d-flex align-items-center justify-content-center gap-3 mt-3"><img class="icono-google " src="img/icons8-logo-de-google.svg">Registrese con google</div>
@@ -179,6 +171,27 @@
 
     </div>
 
-   
+  <script>
+    (function () {
+  'use strict'
+
+  // Obtener todos los formularios a los que queremos aplicar estilos de validación de Bootstrap personalizados
+  var forms = document.querySelectorAll('.needs-validation')
+
+  // Bucle sobre ellos y evitar el envío
+  Array.prototype.slice.call(forms)
+    .forEach(function (form) {
+      form.addEventListener('submit', function (event) {
+        if (!form.checkValidity()) {
+          event.preventDefault()
+          event.stopPropagation()
+        }
+
+        form.classList.add('was-validated')
+      }, false)
+    })
+})()
+  </script> 
   </body>
+
 </html>
